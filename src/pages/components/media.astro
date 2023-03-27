@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Picture } from '@astrojs/image/components';
+import localImage from './public/assets/too_cute.jpg';
+const localImagePath = '/assets/too_cute.jpg';
+const remoteImage = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+---
+
+
+<Layout title="Welcome to Astro.">
+	<main>
+        <Picture src={localImage} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']} alt="The Astro logo" />
+        <!-- こっちは怒られる -->
+        <!-- <Picture src={localImagePath} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']} alt="The Astro logo" /> -->
+        
+        <!-- リモート画像(アスペクト比は必須です)-->
+        <Picture src={remoteImage} widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 100vw, 800px" alt="The Google logo" />
+        
+        <!-- /publicにある画像はリモート画像として動作します -->
+        <Picture src="/assets/too_cute.jpg" widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 100vw, 800px" alt="The Google logo" />
+        
+        <!-- インラインインポートもサポートされます -->
+        <!-- <Picture src={import("../../assets/too-cute.png")} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" alt="The Astro logo" /> -->
+    </main>
+</Layout>
