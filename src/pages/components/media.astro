@@ -20,6 +20,6 @@ const remoteImage = 'https://www.google.com/images/branding/googlelogo/2x/google
         <Picture src="/assets/too_cute.jpg" widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 100vw, 800px" alt="The Google logo" />
         
         <!-- インラインインポートもサポートされます -->
-        <!-- <Picture src={import("../../assets/too-cute.png")} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" alt="The Astro logo" /> -->
+        <Picture src={import("../../../public/assets/too_cute.jpg")} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" alt="The Astro logo" />
     </main>
 </Layout>
