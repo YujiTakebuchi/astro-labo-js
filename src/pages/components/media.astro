@@ -9,7 +9,9 @@ const remoteImage = 'https://www.google.com/images/branding/googlelogo/2x/google
 
 <Layout title="Welcome to Astro.">
 	<main>
-        <Picture src={localImage} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']} alt="The Astro logo" />
+        <!--複数のサイズとフォーマットが指定されたローカル画像 -->
+        <!-- importはdevとbuildでカレントディレクトリの扱い変わる？使いづらいのであまりいいやり方じゃないかも -->
+        <!-- <Picture src={localImage} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']} alt="The Astro logo" /> -->
         <!-- こっちは怒られる -->
         <!-- <Picture src={localImagePath} widths={[200, 400, 800]} sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']} alt="The Astro logo" /> -->
         
